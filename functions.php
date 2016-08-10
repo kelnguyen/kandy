@@ -109,8 +109,12 @@ function kandy_scripts() {
 	wp_enqueue_style( 'kandy-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'kandy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+    
+    wp_enqueue_style('kandy-fonts', 'https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Raleway:400,600');
 
 	wp_enqueue_script( 'kandy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+    
+   
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -154,7 +158,7 @@ register_nav_menus( array( 'secondary'=>'Footer Menu' ) );
 // Changing the read more link //
 
 function alter_read_more_link() {
-    return '<a class="more-link" href="' . get_permalink() . '">More delicious stuff!</a>';
+    return '<a class="more-link" href="' . get_permalink() . '">More posts!</a>';
 } 
 
 add_filter ( 'the_content_more_link', 'alter_read_more_link'); 
@@ -163,6 +167,8 @@ add_filter ( 'the_content_more_link', 'alter_read_more_link');
 
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image') );
 
+
+/*
 // Enqueue a Google Font //
 
 function kandy_fonts_default() {
@@ -171,6 +177,7 @@ function kandy_fonts_default() {
 }
 
 add_action ('wp_enqueue_scripts', 'kandy_fonts_default'); 
+*/
 
 // Add a signature at the end of single posts //
 
@@ -180,6 +187,6 @@ add_filter('the_content','add_signature', 1);
 function add_signature($knsignature) {
  global $post;
  if(($post->post_type == 'post')) 
-    $knsignature .= '<div class="signature"><img src="http://phoenix.sheridanc.on.ca/~ccit3665/wp-content/themes/knguyen1/img/signature.png"></div>';
+    $knsignature .= '<div class="signature"><p>Kelly Nguyen</p></div>';
     return $knsignature;
 } 

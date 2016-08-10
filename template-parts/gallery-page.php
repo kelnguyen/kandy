@@ -25,14 +25,16 @@ get_header(); ?>
     <div id="gallery">
             <!--    <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp1.jpg" alt="" id="main-img" />
                 <ul class="simg"> -->
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp1.jpg" alt="" width="50" />   
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp2.jpg" alt="" width="50" />
+                  <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/hairdyeportraits/hdp1.jpg'?>" alt="" width="50" />  
         
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp3.jpg" alt="" width="50" />
+                  <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/hairdyeportraits/hdp2.jpg'?>" alt="" width="50" /> 
         
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp4.jpg" alt="" width="50" />
+                  <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/hairdyeportraits/hdp3.jpg'?>" alt="" width="50" /> 
         
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp5.jpg" alt="" width="50" />
+                  <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/hairdyeportraits/hdp4.jpg'?>" alt="" width="50" /> 
+        
+                  <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/hairdyeportraits/hdp5.jpg'?>" alt="" width="50" /> 
+        
         </div>        
             
           
