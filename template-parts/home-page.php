@@ -8,15 +8,6 @@
  * @package kandy
  */
 
-// Enqueue a Google Font //
-
-function load_google_fonts() {
-    wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Raleway');
-    wp_enqueue_style('googlefonts');
-}
-
-add_action ('wp_print_styles', 'load_google_fonts'); 
-
 get_header(); ?>
 
 	<div id="primary" class="content-area">

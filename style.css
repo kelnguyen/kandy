@@ -282,9 +282,11 @@ h6 {
 	clear: both;
 }
 
+/*
 p {
 	margin-bottom: 1.5em;
 }
+*/
 
 dfn,
 cite,
@@ -617,6 +619,10 @@ a:active {
 	display: block;
 }
 
+.menu-toggle {
+    margin: auto;
+}
+
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
 		display: none;
@@ -931,7 +937,6 @@ a {
     background-color: antiquewhite;
     padding: 5px 5px 5px 5px;
     margin: auto;
-    float: left;
 }
 
 #masthead,
@@ -962,7 +967,6 @@ a {
 }
 
 #primary {
-    float: left;
     margin-top: 40px;
     margin-left: none;
 }
@@ -974,6 +978,7 @@ a {
 
 .site-title {
     font-size: 2em;
+    font-family: 'Raleway', sans-serif;
 }
 
 ul {

@@ -85,6 +85,9 @@ add_action( 'after_setup_theme', 'kandy_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
+
+// Sidebar //
+
 function kandy_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'kandy' ),
@@ -97,6 +100,7 @@ function kandy_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'kandy_widgets_init' );
+
 
 /**
  * Enqueue scripts and styles.
@@ -158,3 +162,24 @@ add_filter ( 'the_content_more_link', 'alter_read_more_link');
 // Post formats //
 
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image') );
+
+// Enqueue a Google Font //
+
+function kandy_fonts_default() {
+    wp_enqueue_style('kandy-fonts', 'https://fonts.googleapis.com/css?family=Raleway');
+    
+}
+
+add_action ('wp_enqueue_scripts', 'kandy_fonts_default'); 
+
+// Add a signature at the end of single posts //
+
+add_action ('the_content', 'add_signature', 1);
+
+add_filter('the_content','add_signature', 1);
+function add_signature($knsignature) {
+ global $post;
+ if(($post->post_type == 'post')) 
+    $knsignature .= '<div class="signature"><img src="http://phoenix.sheridanc.on.ca/~ccit3665/wp-content/themes/knguyen1/img/signature.png"></div>';
+    return $knsignature;
+} 
