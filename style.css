@@ -788,6 +788,7 @@ a:active {
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+    padding: 0px 10px 0px 10px;
 }
 
 .page-links {
@@ -976,7 +977,6 @@ a {
 }
 
 #secondary {
-    float: right;
     padding: 5px 5px 5px 5px;
 }
 
@@ -987,6 +987,10 @@ a {
 
 .site-branding {
     color: #FCFFF7;
+}
+
+.site-main {
+    max-width: 750px;
 }
 
 .site-title {
@@ -1013,10 +1017,10 @@ ul.nav-menu a:hover {
     border: 2px antiquewhite solid;
 }
 
-.widget-area {
-    width: 250px; 
-    margin: 0.2em;
-    padding: 0.2em;
+.widget-area { 
+    margin: 1em;
+    padding: 1em;
+    width: 250px;
 }
 
 /* Responsive design */ 

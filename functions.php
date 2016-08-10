@@ -90,9 +90,9 @@ add_action( 'after_setup_theme', 'kandy_content_width', 0 );
 
 function kandy_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'kandy' ),
+		'name'          => esc_html__( 'Navigation', 'kandy' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'kandy' ),
+		'description'   => esc_html__( 'Select your widgets.', 'kandy' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -190,3 +190,19 @@ function add_signature($knsignature) {
     $knsignature .= '<div class="signature"><p>Kelly Nguyen</p></div>';
     return $knsignature;
 } 
+
+// Adding jQuery for Flexslider //
+
+function my_add_scripts() {
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('flexslider', get_stylesheet_directory_uri().'/wp-content/themes/kandy/js/jquery.flexslider-min.js', array('jquery'));
+    wp_enqueue_script('flexslider-init', get_stylesheet_directory_uri().'/wp-content/themes/kandy/js/flexslider-init.js', array('jquery', 'flexslider'));
+}
+add_action('wp_enqueue_scripts', 'my_add_scripts');
+
+// Enqueuing the stylesheet for Flexslider //
+
+function my_add_styles() {
+    wp_enqueue_style('flexslider', get_stylesheet_directory_uri().'/css/flexslider.css');
+}
+add_action('wp_enqueue_scripts', 'my_add_styles');

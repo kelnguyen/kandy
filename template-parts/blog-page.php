@@ -74,9 +74,9 @@ get_header(); ?>
 		</main><!-- #main -->
         
 <div class="nav-previous alignright">
-    <?php next_posts_link(__( 'Next Posts &rarr;', 'underscores' ) ); 		?> </div>  			 			 		
+    <?php next_posts_link(__( 'Next &rarr;', 'underscores' ) ); 		?> </div>  			 			 		
 <div class="nav-next alignleft">
-    <?php previous_posts_link( __( '&larr; Previous Posts', 'underscores' )  );  		?> </div>
+    <?php previous_posts_link( __( '&larr; Previous', 'underscores' )  );  		?> </div>
         
 	</div><!-- #primary -->
 

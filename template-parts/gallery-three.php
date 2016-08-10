@@ -8,26 +8,18 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-            
-            
 <!-- Adding Gallery Two Flexslider -->
 <!--
 <div class="flexslider">
   <ul class="slides">
     <li>
-      <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/hairdyeportraits/hdp1.jpg' ?>" />
+      <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/imagetext/it1.jpg' ?>" />
     </li>
     <li>
-      <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/hairdyeportraits/hdp2.jpg' ?>" />
+      <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/imagetext/it2.jpg' ?>" />
     </li>
     <li>
-      <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/hairdyeportraits/hdp3.jpg' ?>" />
-    </li>
-    <li>
-      <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/hairdyeportraits/hdp4.jpg' ?>" />
-    </li>
-    <li>
-      <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/hairdyeportraits/hdp5.jpg' ?>" />
+      <img src="<?php get_template_directory_uri() . '/wp-content/themes/kandy/img/imagetext/it3.jpg' ?>" />
     </li>  
   </ul>
 </div>              
