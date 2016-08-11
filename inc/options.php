@@ -1,7 +1,7 @@
 <?php
 	
 function kn_add_submenu() {
-		add_submenu_page( 'themes.php', 'Kandy Options Page', 'Theme Options', 'manage_options', 'theme_options', 'kn_theme_options_page');
+		add_submenu_page( 'themes.php', 'Kandy Options Page', 'Theme Options', 'manage_options', 'theme_options', 'my_theme_options_page');
 	}
 add_action( 'admin_menu', 'kn_add_submenu' );
 	
@@ -44,7 +44,6 @@ function kn_settings_init() {
 		'kn_options_page_section'  
 	);
 	
-    /*
 	add_settings_field( 
 		'kn_textarea_field', 
 		'Enter content in the textarea', 
@@ -52,17 +51,14 @@ function kn_settings_init() {
 		'theme_options', 
 		'kn_options_page_section'  
 	);
-	*/
-    
-    /*
+	
 	add_settings_field( 
 		'kn_select_field', 
-		'Select from the dropdown', 
+		'Choose from the dropdown', 
 		'kn_select_field_render', 
 		'theme_options', 
 		'kn_options_page_section'  
 	);
-    */
 
 	function kn_text_field_render() { 
 		$options = get_option( 'kn_options_settings' );
@@ -82,62 +78,35 @@ function kn_settings_init() {
 	function kn_radio_field_render() { 
 		$options = get_option( 'kn_options_settings' );
 		?>
+		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 1 ); ?> value="<h2>HELLO</h2>" /> <label>Option One</label><br />
 
-<!-- Gallery 1 Images - Campus Landscape -->
+		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 2 ); ?> value="<h2>BONJOUR</h2>" /> <label>Option Two</label><br />
 
-		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 1 ); ?> value="1" /> <label>Image Gallery One</label><br />
-
-<!-- Gallery 2 Images - Hair Dye Portraits -->
-
- <div id="gallery2">
-            <!--    <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp1.jpg" alt="" id="main-img" />
-                <ul class="simg"> -->
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp1.jpg" alt="" width="50" />   
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp2.jpg" alt="" width="50" />
-        
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp3.jpg" alt="" width="50" />
-        
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp4.jpg" alt="" width="50" />
-        
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp5.jpg" alt="" width="50" />
-        </div>        
-            
-
-		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 2 ); ?> value="2" /> <label>Image Gallery Two</label><br />
-
-<!-- Gallery 3 Images - Image & Text -->
-
-
-		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 3 ); ?> value="3" /> <label>Image Gallery Three</label>
+		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 3 ); ?> value="<h2>HOLA</h2>" /> <label>Option Three</label>
 		<?php
 	}
 	
-    /*
 	function kn_textarea_field_render() { 
 		$options = get_option( 'kn_options_settings' );
 		?>
 		<textarea cols="40" rows="5" name="kn_options_settings[kn_textarea_field]"><?php if (isset($options['kn_textarea_field'])) echo $options['kn_textarea_field']; ?></textarea>
 		<?php
 	}
-    */
-   
-    /*
+
 	function kn_select_field_render() { 
 		$options = get_option( 'kn_options_settings' );
 		?>
 		<select name="kn_options_settings[kn_select_field]">
-			<option value="1" <?php if (isset($options['kn_select_field'])) selected( $options['kn_select_field'], 1 ); ?>>Image Gallery 1</option>
-			<option value="2" <?php if (isset($options['kn_select_field'])) selected( $options['kn_select_field'], 2 ); ?>>Image Gallery 2</option>
-            <option value="3" <?php if (isset($options['kn_select_field'])) selected( $options['kn_select_field'], 3 ); ?>>Image Gallery 3</option>
+			<option value="1" <?php if (isset($options['kn_select_field'])) selected( $options['kn_select_field'], 1 ); ?>>Option 1</option>
+			<option value="2" <?php if (isset($options['kn_select_field'])) selected( $options['kn_select_field'], 2 ); ?>>Option 2</option>
 		</select>
 	<?php
 	}
-    */
-    
-	function kn_theme_options_page(){ 
+	
+	function my_theme_options_page(){ 
 		?>
 		<form action="options.php" method="post">
-			<h2>Kandy Options Page</h2>
+			<h2>My Awesome Options Page</h2>
 			<?php
 			settings_fields( 'theme_options' );
 			do_settings_sections( 'theme_options' );
@@ -146,7 +115,6 @@ function kn_settings_init() {
 		</form>
 		<?php
 	}
-    
 
 }
 
