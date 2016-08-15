@@ -85,11 +85,14 @@ add_action( 'after_setup_theme', 'kandy_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
+
+// Sidebar //
+
 function kandy_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'kandy' ),
+		'name'          => esc_html__( 'Navigation', 'kandy' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'kandy' ),
+		'description'   => esc_html__( 'Select your widgets.', 'kandy' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -98,6 +101,7 @@ function kandy_widgets_init() {
 }
 add_action( 'widgets_init', 'kandy_widgets_init' );
 
+
 /**
  * Enqueue scripts and styles.
  */
@@ -105,8 +109,12 @@ function kandy_scripts() {
 	wp_enqueue_style( 'kandy-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'kandy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+    
+    wp_enqueue_style('kandy-fonts', 'https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Raleway:400,600');
 
 	wp_enqueue_script( 'kandy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+    
+   
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -150,7 +158,7 @@ register_nav_menus( array( 'secondary'=>'Footer Menu' ) );
 // Changing the read more link //
 
 function alter_read_more_link() {
-    return '<a class="more-link" href="' . get_permalink() . '">More delicious stuff!</a>';
+    return '<a class="more-link" href="' . get_permalink() . '">More posts!</a>';
 } 
 
 add_filter ( 'the_content_more_link', 'alter_read_more_link'); 
@@ -158,3 +166,59 @@ add_filter ( 'the_content_more_link', 'alter_read_more_link');
 // Post formats //
 
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image') );
+
+
+/*
+// Enqueue a Google Font //
+
+function kandy_fonts_default() {
+    wp_enqueue_style('kandy-fonts', 'https://fonts.googleapis.com/css?family=Raleway');
+    
+}
+
+add_action ('wp_enqueue_scripts', 'kandy_fonts_default'); 
+*/
+
+// Add a signature at the end of single posts //
+
+add_action ('the_content', 'add_signature', 1);
+
+add_filter('the_content','add_signature', 1);
+function add_signature($knsignature) {
+ global $post;
+ if(($post->post_type == 'post')) 
+    $knsignature .= '<div class="signature"><p>Kelly Nguyen</p></div>';
+    return $knsignature;
+} 
+
+// Adding jQuery for Flexslider //
+
+function my_add_scripts() {
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('flexslider', get_stylesheet_directory_uri().'/wp-content/themes/kandy/js/jquery.flexslider-min.js', array('jquery'));
+    wp_enqueue_script('flexslider-init', get_stylesheet_directory_uri().'/wp-content/themes/kandy/js/flexslider-init.js', array('jquery', 'flexslider'));
+}
+add_action('wp_enqueue_scripts', 'my_add_scripts');
+
+// Enqueuing the stylesheet for Flexslider //
+
+function my_add_styles() {
+    wp_enqueue_style('flexslider', get_stylesheet_directory_uri().'/css/flexslider.css');
+}
+add_action('wp_enqueue_scripts', 'my_add_styles');
+
+// Adding custom post types //
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type( 'kandy_posts',
+    array(
+      'labels' => array(
+        'name' => __( 'Images' ),
+        'singular_name' => __( 'Gallery' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
+}

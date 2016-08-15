@@ -8,35 +8,23 @@
  * @package kandy
  */
 
-// Enqueue a Google Font //
-
-function load_google_fonts() {
-    wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Raleway');
-    wp_enqueue_style('googlefonts');
-}
-
-add_action ('wp_print_styles', 'load_google_fonts'); 
-
 get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-    <div id="gallery">
-            <!--    <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp1.jpg" alt="" id="main-img" />
-                <ul class="simg"> -->
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp1.jpg" alt="Pink Hair" width="225" />  
-        
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp2.jpg" alt="Blue Hair" width="225" />
-        
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp3.jpg" alt="Teal Hair" width="225" />
-        
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp4.jpg" alt="Blond Hair" width="225" />
-        
-                  <img src="wp-content/themes/kandy/img/hairdyeportraits/hdp5.jpg" alt="Green Hair" width="225" />
-        </div>        
+    <div id="options">        
+    <?php $options = get_option( 'kn_options_settings' ); 
+    echo $options['kn_text_field'] .'<br />';
+    
+    if (isset($options['kn_radio_field']) == 'true'){
+        echo $options['kn_radio_field'] .'<br />';    
+    } 
+    
+    ?>
+    </div>
+              
             
-          
 			<?php
 			while ( have_posts() ) : the_post();
 
@@ -54,5 +42,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

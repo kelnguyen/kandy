@@ -54,7 +54,7 @@ function kn_settings_init() {
 	
 	add_settings_field( 
 		'kn_select_field', 
-		'Select from the dropdown', 
+		'Choose from the dropdown', 
 		'kn_select_field_render', 
 		'theme_options', 
 		'kn_options_page_section'  
@@ -78,9 +78,11 @@ function kn_settings_init() {
 	function kn_radio_field_render() { 
 		$options = get_option( 'kn_options_settings' );
 		?>
-		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 1 ); ?> value="1" /> <label>Option One</label><br />
-		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 2 ); ?> value="2" /> <label>Option Two</label><br />
-		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 3 ); ?> value="3" /> <label>Option Three</label>
+		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 1 ); ?> value="<h2>HELLO</h2>" /> <label>Option One</label><br />
+
+		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 2 ); ?> value="<h2>BONJOUR</h2>" /> <label>Option Two</label><br />
+
+		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 3 ); ?> value="<h2>HOLA</h2>" /> <label>Option Three</label>
 		<?php
 	}
 	
@@ -104,7 +106,7 @@ function kn_settings_init() {
 	function my_theme_options_page(){ 
 		?>
 		<form action="options.php" method="post">
-			<h2>Kandy Options Page</h2>
+			<h2>My Awesome Options Page</h2>
 			<?php
 			settings_fields( 'theme_options' );
 			do_settings_sections( 'theme_options' );
