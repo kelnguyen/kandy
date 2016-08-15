@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Gallery One
+    Template Name: Gallery One - Campus Landscape
 */
 
 get_header(); ?>
@@ -42,7 +42,7 @@ get_header(); ?>
             
 <?php 
     $paged = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;        
-    $args = array('showposts'=>5, 'cat'=>209, 'order'=>'ASC' ); 
+    $args = array('showposts'=>5, 'cat'=>24, 'order'=>'ASC' ); 
             
     query_posts($args);
     $knquery = new WP_Query($args); 

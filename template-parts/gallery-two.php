@@ -1,6 +1,6 @@
 <?php
 /*
-    Template Name: Gallery Two
+    Template Name: Gallery Two - Hair Dye Portraits
 */
 
 get_header(); ?>
@@ -32,7 +32,7 @@ get_header(); ?>
             
 <?php 
     $paged = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;        
-    $args = array('showposts'=>5, 'cat'=>208, 'order'=>'ASC' ); 
+    $args = array('showposts'=>5, 'cat'=>18, 'order'=>'ASC' ); 
             
     query_posts($args);
     $knquery = new WP_Query($args); 
