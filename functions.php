@@ -110,7 +110,7 @@ function kandy_scripts() {
 
 	wp_enqueue_script( 'kandy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
     
-    wp_enqueue_style('kandy-fonts', 'https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Raleway:400,600');
+    wp_enqueue_style('kandy-fonts', 'https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Raleway:400,600|Petit+Formal+Script|Euphoria+Script|Shadows+Into+Light');
 
 	wp_enqueue_script( 'kandy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
     
@@ -211,11 +211,25 @@ add_action('wp_enqueue_scripts', 'my_add_styles');
 
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
-  register_post_type( 'kandy_posts',
+  register_post_type( 'kandy_photos',
     array(
       'labels' => array(
         'name' => __( 'Images' ),
         'singular_name' => __( 'Gallery' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
+}
+
+add_action( 'init', 'create_post_type2' );
+function create_post_type2 () {
+  register_post_type( 'kandy_posts',
+    array(
+      'labels' => array(
+        'name' => __( 'Facts' ),
+        'singular_name' => __( 'Fact' )
       ),
       'public' => true,
       'has_archive' => true,
