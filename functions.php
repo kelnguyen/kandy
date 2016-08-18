@@ -206,33 +206,3 @@ function my_add_styles() {
     wp_enqueue_style('flexslider', get_stylesheet_directory_uri().'/css/flexslider.css');
 }
 add_action('wp_enqueue_scripts', 'my_add_styles');
-
-// Adding custom post types //
-
-add_action( 'init', 'create_post_type' );
-function create_post_type() {
-  register_post_type( 'kandy_photos',
-    array(
-      'labels' => array(
-        'name' => __( 'Images' ),
-        'singular_name' => __( 'Gallery' )
-      ),
-      'public' => true,
-      'has_archive' => true,
-    )
-  );
-}
-
-add_action( 'init', 'create_post_type2' );
-function create_post_type2 () {
-  register_post_type( 'kandy_posts',
-    array(
-      'labels' => array(
-        'name' => __( 'Facts' ),
-        'singular_name' => __( 'Fact' )
-      ),
-      'public' => true,
-      'has_archive' => true,
-    )
-  );
-}

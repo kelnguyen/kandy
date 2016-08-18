@@ -14,6 +14,25 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+        
+    <div id="socialmediabuttons"> 
+        <div class="socialmedia-facebook">
+            <a href="http://www.facebook.com"> Facebook</a>
+        </div>
+        <div class="socialmedia-twitter">
+            <a href="http://www.twitter.com"> Twitter</a>
+        </div>
+        <div class="socialmedia-instagram">
+            <a href="http://www.instagram.com"> Instagram</a>
+        </div>
+        <div class="socialmedia-linkedin">
+            <a href="https://ca.linkedin.com/in/kellynguyen10"> Linked In</a>
+        </div>
+          <div class="socialmedia-vimeo">
+            <a href="http://www.vimeo.com"> Vimeo</a>
+        </div>
+    </div> 
+        
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'kandy' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'kandy' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>

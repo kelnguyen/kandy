@@ -10,26 +10,7 @@
 
 get_header(); ?>
 
-
-<div class="flex-container">
-  <div class="flexslider">
-	<ul class="slides">
-	<?php
-	$flex = new WP_Query(array('photography' => 'featured', 'posts_per_page' => 5));
-	if($flex->have_posts()) :
-	    while($flex->have_posts()) : $flex->the_post();
-	?>
-	  <li>
-		<?php the_post_thumbnail(); ?>
-		
-	  </li>
-	<?php
-	    endwhile;
-	endif;
-	?>
-	</ul>
-  </div>
-</div>
+<!-- Attempt to add Flexslider again here -->
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

@@ -81,14 +81,16 @@ function kn_settings_init() {
 		'kn_options_page_section'  
 	);    
 
-
+// Gives the option to leave a message on the Contact Page
+    
 	function kn_text_field_render() { 
 		$options = get_option( 'kn_options_settings' );
 		?>
 		<input type="text" name="kn_options_settings[kn_text_field]" value="<?php if (isset($options['kn_text_field'])) echo $options['kn_text_field']; ?>" />
 		<?php
 	}
-	
+
+/*    
 	function kn_checkbox_field_render() { 
 		$options = get_option( 'kn_options_settings' );
 	?>
@@ -96,6 +98,9 @@ function kn_settings_init() {
 		<label>Turn it On</label> 
 		<?php	
 	}
+*/
+
+// Gives the option to select one of three captions to be displayed on the Contact Page    
 	
 	function kn_radio_field_render() { 
 		$options = get_option( 'kn_options_settings' );
@@ -107,13 +112,18 @@ function kn_settings_init() {
 		<input type="radio" name="kn_options_settings[kn_radio_field]" <?php if (isset($options['kn_radio_field'])) checked( $options['kn_radio_field'], 3 ); ?> value="<h2>Connect with me on social media!</h2>" /> <label>Caption Three: "Connect with me on social media!"</label>
 		<?php
 	}
-	
+
+/*    
+    
 	function kn_textarea_field_render() { 
 		$options = get_option( 'kn_options_settings' );
 		?>
 		<textarea cols="40" rows="5" name="kn_options_settings[kn_textarea_field]"><?php if (isset($options['kn_textarea_field'])) echo $options['kn_textarea_field']; ?></textarea>
 		<?php
 	}
+*/
+
+// Gives the option to change the background colour of the content area    
 
 	function kn_select_field_render() { 
 		$options = get_option( 'kn_options_settings' );
@@ -129,7 +139,8 @@ function kn_settings_init() {
 		</select>
 	<?php
 	}
-	
+
+// Gives the option to change the font style of the text in the content area on the Home Page   
     
     function kn_select_field_render2() { 
 		$options = get_option( 'kn_options_settings' );
@@ -145,6 +156,8 @@ function kn_settings_init() {
 		</select>
 	<?php
 	}
+    
+// Gives the option to change the font size in the content area on the Home Page
     
        function kn_select_field_render3() { 
 		$options = get_option( 'kn_options_settings' );

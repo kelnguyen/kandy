@@ -931,6 +931,50 @@ a {
 	margin: 0 auto;
 }
 
+#socialmediabuttons {
+    margin: auto;
+    padding: 0px 10px 0px 10px;
+    text-align: center;
+}
+
+.socialmedia-facebook,
+.socialmedia-twitter,
+.socialmedia-instagram,
+.socialmedia-linkedin,
+.socialmedia-vimeo {
+    display: inline-block;
+}
+
+.socialmedia-facebook a:before {
+    content: '\f230';
+    font-family: 'FontAwesome';
+    text-align: center;
+}
+
+.socialmedia-twitter a:before {
+    content: '\f081';
+    font-family: 'FontAwesome';
+    text-align: center;
+}
+
+.socialmedia-instagram a:before {
+    content: '\f16d';
+    font-family: 'FontAwesome';
+    text-align: center;
+}
+
+.socialmedia-linkedin a:before {
+    content: '\f0e1';
+    font-family: 'FontAwesome';
+    text-align: center;
+}
+
+.socialmedia-vimeo a:before {
+    content: '\f194';
+    font-family: 'FontAwesome';
+    text-align: center;
+}
+
 img:hover {
     opacity: 0.75;
     filter: alpha(opacity=75); 

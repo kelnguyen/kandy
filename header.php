@@ -17,6 +17,9 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     
+<!-- Enqueuing Font Awesome -->
+<script src="https://use.fontawesome.com/24bb647442.js"></script>    
+    
 <!-- Adding Flexslider -->
 
 <link rel="stylesheet" href="flexslider.css" type="text/css">

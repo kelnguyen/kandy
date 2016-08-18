@@ -8,7 +8,6 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-<!-- Shows posts of one selected category based on ID NTS: Change back category numbers (Desserts is #17) when uploading to Phoenix // select a gallery post ID for this assignment -->
             
 		<?php
 		if ( have_posts() ) : the_post();
