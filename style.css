@@ -926,6 +926,12 @@ a {
     padding-left: 6px;
 }
 
+.entry-header {
+    font-size: 1.5em;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+}
+
 .flex-container {
 	max-width: 320px;
 	margin: 0 auto;
@@ -1067,6 +1073,10 @@ img:hover {
     font-size: 2.5em;
 }
 
+.size-medium {
+    margin-left: 2.5em;
+}
+
 ul {
     list-style-type: square;
     padding-left: 3em;
@@ -1088,6 +1098,7 @@ ul.nav-menu a:hover {
 
 .widget-area { 
     margin: 1em;
+    margin-left: 3em;
     padding: 1em;
     width: 250px;
 }
@@ -1095,6 +1106,8 @@ ul.nav-menu a:hover {
 /* Responsive design */ 
 
 @media only screen and (max-width: 750px) {
+    .attachment-post-thumbnail,
+    .size-medium,
     .container,
     #content,
     #options,
@@ -1112,7 +1125,18 @@ ul.nav-menu a:hover {
     }
 }
 
+@media only screen and (max-width: 1080px) {
+    #options
+    {
+        float: none;
+        margin: auto;
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 480px) {
+    .attachment-post-thumbnail,
+    .size-medium,
     .container,
     #footer-widgets,
     .main-navigation li,
@@ -1142,19 +1166,23 @@ ul.nav-menu a:hover {
         margin: auto;
         width: 100%; 
     }
+    
     #footer-menu-title {
         text-align: center;
     }
+    
 }
 
 @media only screen and (max-width: 270px) {
     .container,
     #footer-widgets,
     .main-navigation li,
+    #options,
     #page,
     .sidebarwidgets,
     .site-branding,
     .site-header,
+    #socialmediabuttons,
     {
         float: none;
         margin: auto;
@@ -1183,6 +1211,7 @@ ul.nav-menu a:hover {
     #footer-menu-title {
         text-align: center;
     }
+    
 }
 
 /* Styling links below */

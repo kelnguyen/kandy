@@ -27,7 +27,7 @@ get_header(); ?>
 
 		endif; ?>             
 
-<!-- Test ^ -->
+<!-- Category #18 shows Hair Dye Portraits -->
             
 <?php 
     $paged = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;        
